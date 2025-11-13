@@ -13,7 +13,7 @@ import { CreateNoteDto } from './dto/create-note.dto';
 export class NotesService {
   constructor(
     @InjectRepository(Note)
-    private notesRepository: Repository<Note>,
+    private readonly notesRepository: Repository<Note>,
   ) {}
 
   async create(vaultId: string, createNoteDto: CreateNoteDto) {

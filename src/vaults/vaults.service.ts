@@ -3,14 +3,12 @@ import { UpdateVaultDto } from './dto/update-vault.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Vault } from './entities/vault.entity';
 import { Repository } from 'typeorm';
-import { VaultsGateway } from './vaults.gateway';
 
 @Injectable()
 export class VaultsService {
   constructor(
     @InjectRepository(Vault)
-    private vaultsRepository: Repository<Vault>,
-    private vaultsGateway: VaultsGateway,
+    private readonly vaultsRepository: Repository<Vault>,
   ) {}
 
   async create(userId: string, name: string) {

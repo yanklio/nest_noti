@@ -11,7 +11,7 @@ export const roundsOfHashing = 10;
 export class UsersService {
   constructor(
     @InjectRepository(User)
-    private usersRepository: Repository<User>,
+    private readonly usersRepository: Repository<User>,
   ) {}
 
   async create(username: string, email: string, password: string) {

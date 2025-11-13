@@ -20,7 +20,7 @@ export class NoteAccessGuard implements CanActivate {
 
     const note = await this.notesService.findOneWithVault(noteIdFromRequest);
 
-    if (!note || !note.vault.id) {
+    if (!note?.vault?.id) {
       return false;
     }
 

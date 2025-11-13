@@ -15,7 +15,7 @@ import * as uuidValidate from 'uuid-validate';
 export class BlocksService {
   constructor(
     @InjectRepository(Block)
-    private blockRepository: Repository<Block>,
+    private readonly blockRepository: Repository<Block>,
     private readonly blockOrderHelper: BlockOrderHelper,
   ) {}
 
